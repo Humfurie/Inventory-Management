@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+		integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+	<div class="main">
+		<div class="header">
+			<img src="./img/logo4.png" alt="Pic not found">
+			<div>
+				<h2>Manage Inventory</h2>
+				<a href="#help-modal" id="help-button"><i class="fa-solid fa-circle-question"></i></a>
+			</div>
+		</div>
+		<a href="#add-modal" id="add-button" class="button-group"><span><i class="fa-solid fa-square-plus"></i>Add New</span></a>
+		<table class="inventory-table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Product name</th>
+					<th>Product description</th>
+					<th>Unit price</th>
+					<th>Stocks left</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody id="data"></tbody>
+			<!--Data from mysql-->
+			<!--Print data from backend; from <tbody> tag-->
+		</table>
+	</div>
+	<!--Add modal-->
+	<div id="add-modal" class="modal">
+		<div class="modal-content">
+			<span class="close"><i class="fa-solid fa-xmark"></i></span>
+			<h2>Add new Product</h2>
+			<form>
+				<div class="input-group">
+					<input type="text" name="product_name" id="product_name" placeholder="Enter product name" value=""
+						required size="50">
+				</div>
+				<div class="input-group">
+					<input type="text" name="product_desc" id="product_desc" placeholder="Enter product description"
+						value="" required size="50">
+				</div>
+				<div class="input-group">
+					<input type="number" name="unit_price" id="unit_price" placeholder="Enter unit price" value=""
+						required size="50">
+				</div>
+				<div class="input-group">
+					<input type="number" name="item_stock" id="item_stock" placeholder="Enter initial number of stocks"
+						value="" required size="50">
+				</div>
+				<div class="">
+					<button type="submit" name="submit" id="submit" class="button-group">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!--Edit modal-->
+	<!--Add input values based on the id fetched-->
+	<div id="edit-modal" class="modal">
+		<div class="modal-content">
+			<span class="close"><i class="fa-solid fa-xmark"></i></span>
+			<h2>Edit product information</h2>
+			<form id="updateForm">
+				<div class="input-group">
+					<input type="hidden" name="editID" id="editID" value="">
+					<input type="text" name="product_name" id="edit_product_name" placeholder="Enter product name" value=""
+						required size="50">
+				</div>
+				<div class="input-group">
+					<input type="text" name="product_desc" id="edit_product_desc" placeholder="Enter product description"
+						value="" required size="50">
+				</div>
+				<div class="input-group">
+					<input type="number" name="unit_price" id="edit_unit_price" placeholder="Enter unit price" value=""
+						required size="50">
+				</div>
+				<div class="input-group">
+					<input type="number" name="item_stock" id="edit_item_stock" placeholder="Enter initial number of stocks"
+						value="" required size="50">
+				</div>
+				<div class="">
+					<button type="submit" name="submit" id="update" class="button-group">Update</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!--Help modal-->
+	<!--Guidelines-->
+	<div id="help-modal" class="modal">
+		<div class="modal-content">
+			<span class="close"><i class="fa-solid fa-xmark"></i></span>
+			<h4>Create</h4>
+			<ol type="1">
+				<li>Click the "Add New button"</li>
+				<li>Fill in the input fields:</li>
+				<ul>
+					<li><b>Product Name</b>&nbsp;refers to the name of the product.</li>
+					<li><b>Product Description</b>&nbsp;refers to the product's description or specifications about this product.</li>
+					<li><b>Unit price</b>&nbsp;refers to the product's price.</li>
+					<li><b>Stocks Left</b>&nbsp;refers to the number of stocks available.</li>
+				</ul>
+				<li>Click the "Submit" button to add the new product to database.</li>
+			</ol>
+			<h4>Edit</h4>
+			<ol type="1">
+				<li>Hover your mouse to the product you want to edit the product's information.</li>
+				<li>Click the "Edit" button to enter edit product's information.</li>
+				<li>Modify the information you want to change.</li>
+				<li>Click "Update" button to update the product's information.</li>
+			</ol>
+			<h4>Delete</h4>
+			<ol type="1">
+				<li>Hover your mouse to the product you want to delete the product.</li>
+				<li>Click the "Delete" button to delete the product from the database.</li>
+			</ol>
+		</div>
+	</div>
+	<script src="./assets/js/func.js"></script>
+	<script src="./func/index.js" type="module"></script>
+	<script src="./func/update_delete.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F2EDD7FF;
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+    cursor: default;
+}
+/* Header */
+.header {
+    width: 100%;
+    height: 8rem;
+    top: 0;
+    z-index: 1;
+    padding: 5px;
+    font-size: 18pt;
+    text-align: center;
+    background: #755139FF;
+    color: white;
+    position: sticky;
+    display: block;
+}
+.header img {
+    height: 65%;
+    width: 10%;
+    left:30px;
+    top:20px;
+    position: absolute;
+    float: left;
+}
+.header h2 {
+    display: inline-block;
+    width: max-content;
+    padding: 10px;
+    margin-left: 8%;
+    font-size: 30pt;
+    text-align: center;
+}
+/* help button and modal */
+.header a {
+    font-size: 28pt;
+    float: right;
+    padding: 10px;
+    top: 15%;
+    margin: 30px;
+    color: white;
+}
+.header a:hover, 
+.header a:visited {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+.help-content h4{
+    display: block;
+    font-size: 18pt;
+}
+
+/* Inputs and buttons */
+.input-group input{
+    width: 95%;
+    padding: 7px 9px;
+    margin: 5px 5px 8px 15px;
+    box-sizing: border-box;
+}
+.button-group {
+    width: 5em;
+    padding: 7px 9px;
+    margin: 15px;
+    text-decoration: none;
+    border-radius: 3px;
+    text-align: center;
+}
+.button-group:hover {
+    cursor: pointer;
+}
+#add-button {
+    border: 2px solid #005dc0;
+    background-color: #007bff;
+    color: white;
+    display: block;
+    margin-left: 10%;
+}
+a:visited {
+    color: initial;
+}
+/* Table design */
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+thead {
+  background-color: #007bff;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #DDD;
+}
+td a {
+    color: red;
+}
+tbody {
+    background-color: white;
+}
+/*Modal*/
+.modal {
+    display: none; /*Hidden by default*/
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+/* Modal content*/
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 15px;
+    border: 1px solid #222;
+    border-radius: 5px;
+    width: 60%;
+}
+.modal-content h2 {
+    display: inline-block;
+    width: max-content;
+    padding: 5px;
+    margin-left: 2%;
+    font-size: 24pt;
+}
+.modal-content h4 {
+    padding-left: 5%;
+}
+/*Modal close*/
+.close {
+    color: #aaa;
+    float: right;
+    margin-right: 10px;
+    font-size: 21pt;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+} 
